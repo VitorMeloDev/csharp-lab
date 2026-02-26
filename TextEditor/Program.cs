@@ -52,21 +52,19 @@
         static void EditFile()
         {
             Console.Clear();
-            Console.WriteLine("Digit the text below (ESC to exit)");
+            Console.WriteLine("Digite seu texto abaixo (ESC para sair e salvar)");
             Console.WriteLine("==========");
             string text = "";
 
-            do
+            while (Console.ReadKey(true).Key != ConsoleKey.Escape)
             {
                 text += Console.ReadLine();
                 text += Environment.NewLine;
             }
-            while(Console.ReadKey().Key != ConsoleKey.Escape);
-            System.Console.WriteLine(text);
-            Console.ReadKey();
+
             Save(text);
         }
-        
+
         static void Save(string text)
         {
             Console.Clear();
