@@ -8,9 +8,7 @@ namespace Portal
         {
             List<Game> games = new List<Game>();
             List<Review> reviews = new List<Review>();
-            List<Company> companies = new  List<Company>();
 
-            
         }
     }
 }
