@@ -7,6 +7,7 @@ namespace Portal
     {
         static void Main()
         {
+            // Criar logica para escrever a review.
             MainMenu.Init();
         }
     }
