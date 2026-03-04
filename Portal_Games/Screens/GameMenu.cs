@@ -8,7 +8,8 @@ namespace Portal.Screens
         public static void Init()
         {
             Console.Clear();
-            Console.WriteLine("Game Menu\n0 - Menu Principal\n1 - Adicionar Jogo\n 2 - Listar jogos");
+            Console.WriteLine("Game Menu\n0 - Menu Principal\n1 - Adicionar Jogo\n2 - Listar jogos");
+            Console.Write("O que gostaria de fazer? ");
             short x = short.Parse(Console.ReadLine());
 
             switch(x)

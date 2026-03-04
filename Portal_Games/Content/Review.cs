@@ -6,17 +6,19 @@ namespace Portal.Content
         public string Title {get; set;}
         public string Subtitle {get; set;}
         public string GameReview {get; set;}
+        public string GameTitle {get; set;}
         public DateOnly PublicationDate {get; set;}
 
         public Review(){}
 
-        public Review(string title, string subtitle, string review)
+        public Review(string title, string subtitle, string review, string gameTitle)
         {
             Id = Guid.NewGuid();
             PublicationDate = DateOnly.FromDateTime(DateTime.Today);
             Title = title;
             Subtitle = subtitle;
             GameReview = review;
+            GameTitle = gameTitle;
         }
     }
 }
