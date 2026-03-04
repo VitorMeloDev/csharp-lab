@@ -3,9 +3,32 @@ using Portal.Savesystem;
 
 namespace Portal.Screens
 {
-    class GameMenu
+    static class GameMenu
     {
-        public void Init()
+        public static void Init()
+        {
+            Console.Clear();
+            Console.WriteLine("Game Menu\n0 - Menu Principal\n1 - Adicionar Jogo\n 2 - Listar jogos");
+            short x = short.Parse(Console.ReadLine());
+
+            switch(x)
+            {
+                case 0:
+                    MainMenu.Init();
+                    break;
+                case 1:
+                    CreateGame();
+                    break;
+                case 2:
+                    ListAll();
+                    break;
+                default:
+                    Init();
+                    break;
+            }
+        }
+
+        private static void CreateGame()
         {
             Console.Clear();
             Console.Write("Nome do jogo: ");
@@ -21,8 +44,22 @@ namespace Portal.Screens
             
             Game game = new Game(name, resume, date, developer, publisher);
             SaveGame.Save(game);
+            Console.WriteLine("Arquivo salvo!");
+            Console.ReadKey();
+            Init();
         }
 
-        
+        public static void ListAll()
+        {
+            Console.Clear();
+
+            List<Game> games = SaveGame.GetAllGames();
+            foreach (var game in games)
+            {
+                Console.WriteLine($"Titulo: {game.Title}\nAno: {game.ReleaseDay.Year}");   
+            }
+            Console.ReadKey();
+            Init();
+        }
     }
 }

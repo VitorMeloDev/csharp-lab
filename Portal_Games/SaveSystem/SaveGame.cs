@@ -14,7 +14,8 @@ namespace Portal.Savesystem
 
             string json = JsonSerializer.Serialize(game, options);
 
-            string folder = "Games";
+            string basePath = AppContext.BaseDirectory;
+            string folder = Path.Combine(basePath, "Games");
 
             Directory.CreateDirectory(folder);
 
@@ -23,9 +24,10 @@ namespace Portal.Savesystem
             File.WriteAllText(path, json);
         }
 
-        public static List<Game> LoadAll()
+        public static List<Game> GetAllGames()
         {
-            string folder = "Games";
+            string basePath = AppContext.BaseDirectory;
+            string folder = Path.Combine(basePath, "Games");
 
             if (!Directory.Exists(folder))
                 return new List<Game>();

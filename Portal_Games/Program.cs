@@ -1,4 +1,5 @@
 ﻿using Portal.Content;
+using Portal.Screens;
 
 namespace Portal
 {
@@ -6,9 +7,7 @@ namespace Portal
     {
         static void Main()
         {
-            List<Game> games = new List<Game>();
-            List<Review> reviews = new List<Review>();
-
+            MainMenu.Init();
         }
     }
 }
